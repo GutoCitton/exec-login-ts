@@ -1,0 +1,11 @@
+.Footer {
+  background-color: rgb(25, 25, 25);
+  padding: 10px;
+}
+
+.Footer small {
+  display: flex;
+  justify-content: center;
+  color: #FFF;
+  
+}
