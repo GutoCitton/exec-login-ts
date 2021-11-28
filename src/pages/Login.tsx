@@ -1,6 +1,7 @@
 import { Formik, Field, Form, FormikHelpers } from "formik";
 import { AuthContext } from "../context/AuthContext";
 import { useContext } from "react";
+import styles from '../pages/Login.module.css'
 
 
 
@@ -12,8 +13,10 @@ interface LoginDTO {
 const Login = () => {
   const {handleLogin} = useContext<any>(AuthContext)
   return (
-    <div>
-      <h1>Login Cogumelo</h1>
+    <div className={styles.pageContainer}>
+      <div className={styles.divH1}>
+        <h1>Faça Login</h1>
+      </div>
       <Formik
         initialValues={{
           usuario: '',
@@ -23,23 +26,24 @@ const Login = () => {
           values: LoginDTO,
           { setSubmitting }: FormikHelpers<LoginDTO>
           ) => {
-            setTimeout(() => {
-              // alert(JSON.stringify(values, null, 2));
               handleLogin(values);
               setSubmitting(false);
-            }, 500);
         }}
       >
         <Form>
-          <div>
-            <label htmlFor="usuario">Usuario: </label>
-            <Field id="usuario" name="usuario" placeholder="Digite o usuário" />
+          <div className= {styles.containerLogin}> 
+            <div className= {styles.containerLoginBox}>
+              <div className={styles.inputContainer}>
+                <label htmlFor="usuario">Usuario</label>
+                <Field id="usuario" name="usuario" placeholder="Digite o usuário" />
+              </div>
+              <div className={styles.inputContainer}>
+                <label htmlFor="senha">Senha</label>
+                <Field id="senha" type='password' name="senha" placeholder="Digite a senha" />
+              </div>
+              <button type="submit">Entrar</button>
+            </div>
           </div>
-          <div>
-            <label htmlFor="senha">Senha: </label>
-            <Field id="senha" type='password' name="senha" placeholder="Digite a senha" />
-          </div>
-          <button type="submit">Logar</button>
         </Form>
       </Formik>
     </div>

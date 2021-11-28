@@ -1,12 +1,16 @@
+import { useContext } from 'react'
 import { Link } from 'react-router-dom'
+import { AuthContext } from '../context/AuthContext'
 import styles from './Menu.module.css'
 
 const Menu = () => {
+  const {handleLogout, auth} = useContext<any>(AuthContext)
   return (
     <nav className={styles.menu}>
       <ul>
         <li><Link to='/login'>Login</Link></li>
         <li><Link to='/pessoa'>pessoa</Link></li>
+        <li>{auth && <button onClick={handleLogout}>Sair</button>}</li>
       </ul>
     </nav>
   )
