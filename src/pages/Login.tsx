@@ -30,7 +30,7 @@ const Login = () => {
               setSubmitting(false);
         }}
       >
-        <Form>
+        <Form >
           <div className= {styles.containerLogin}> 
             <div className= {styles.containerLoginBox}>
               <div className={styles.inputContainer}>
@@ -41,7 +41,7 @@ const Login = () => {
                 <label htmlFor="senha">Senha</label>
                 <Field id="senha" type='password' name="senha" placeholder="Digite a senha" />
               </div>
-              <button type="submit">Entrar</button>
+              <button className={styles.btnEntrar} type="submit">Entrar</button>
             </div>
           </div>
         </Form>

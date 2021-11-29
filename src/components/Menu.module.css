@@ -21,3 +21,17 @@
   list-style-type: none;
   margin-left: 20px;
 }
+
+.btnSair {
+  border: none;
+  /* background-color: rgb(25, 25, 25); */
+  padding: 3px 15px;
+  border-radius: 5px;
+  border: 1px solid #FFF;
+  color: black;
+}
+
+.btnSair:hover {
+  background-color: rgb(255, 0, 0);
+  color: black;
+}

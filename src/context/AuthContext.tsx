@@ -33,7 +33,7 @@ const AuthProvider: React.FC<any> = ({ children }) => {
 
   const handleLogout = () => {
     localStorage.removeItem('token');
-    api.defaults.headers.common['Authorization'] = '';
+    delete api.defaults.headers.common['Authorization'];
     navigate('/login')
     setAuth(false);
   }

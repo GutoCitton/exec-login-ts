@@ -8,9 +8,9 @@ const Menu = () => {
   return (
     <nav className={styles.menu}>
       <ul>
-        <li><Link to='/login'>Login</Link></li>
+        <li><Link to='/login' onClick={handleLogout}>Login</Link></li>
         <li><Link to='/pessoa'>pessoa</Link></li>
-        <li>{auth && <button onClick={handleLogout}>Sair</button>}</li>
+        <li>{auth && <button onClick={handleLogout} className={styles.btnSair}>Sair</button>}</li>
       </ul>
     </nav>
   )

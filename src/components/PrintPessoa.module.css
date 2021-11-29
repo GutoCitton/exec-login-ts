@@ -1,0 +1,33 @@
+.boxPessoa {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.boxPessoa p{
+  margin: 30px 20px;
+}
+
+.boxPessoa div{
+  background-color: rgb(190, 190, 190);
+  width: 450px;
+  border-radius: 20px;
+  margin-bottom: 35px;
+}
+
+.btnApagar {
+  margin: 15px 190px;
+  border: none;
+  background-color: rgb(25, 25, 25);
+  padding: 5px 15px;
+  border-radius: 5px;
+  color: #FFF;
+  min-width: 80px;
+  
+}
+
+.btnApagar:hover {
+  background-color: rgb(255, 0, 0);
+  color: black;
+}
+

@@ -1,32 +1,33 @@
-import React, { useContext } from 'react'
-import api from '../api'
-import { PessoaContext } from '../context/PessoaContext'
-// import { Formik, Field, Form, FormikHelpers } from 'formik';
+import React, { useContext } from 'react';
+import api from '../api';
+import { PessoaContext } from '../context/PessoaContext';
+import moment from 'moment';
+import styles from './PrintPessoa.module.css';
 interface Props {
-  attList: Function
+  attList: Function;
+  setIdEdicao: Function;
 }
 
-const PrintPessoa: React.FC<Props> = ({attList}) => {
-  const { listPessoas } = useContext(PessoaContext)
-
+const PrintPessoa: React.FC<Props> = ({attList, setIdEdicao}) => {
+  const { listPessoas } = useContext(PessoaContext);
 
   const deletePessoa = async (idPessoa: Number) => {
     await api.delete(`/pessoa/${idPessoa}`);
-    await attList()
+    await attList();
   }
-
 
   return (
     <div>
       {listPessoas.map((pessoa) => (
-        <div key={pessoa.idPessoa} style={{margin: 20}}>
-          <p>{pessoa.nome}</p>
-          <p>{pessoa.cpf}</p>
-          <p>{pessoa.dataNascimento}</p>
-          <p>{pessoa.email}</p>
-          <button onClick={() => deletePessoa(pessoa.idPessoa)}>Apagar</button>
-          {/* <button onClick={() => editPessoa(pessoa.idPessoa)}>Editar</button> */}
-          <hr />
+        <div className={styles.boxPessoa} key={pessoa.idPessoa} style={{margin: 20}}>
+          <div>
+            <p>Nome:&nbsp;{pessoa.nome}</p>
+            <p>CPF:&nbsp;{pessoa.cpf}</p>
+            <p>Data de Nascimento:&nbsp;{moment(pessoa.dataNascimento, 'YYYY-MM-DD').format('DD/MM/YYYY') }</p>
+            <p>E-mail:&nbsp;{pessoa.email}</p>
+          <button className={styles.btnApagar} onClick={() => deletePessoa(pessoa.idPessoa)}>Apagar</button>
+          <button className={styles.btnApagar} onClick={() => setIdEdicao(pessoa.idPessoa)}>Editar</button>
+          </div>
         </div>
       ))}
     </div>
