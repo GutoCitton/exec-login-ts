@@ -9,7 +9,8 @@ const Menu = () => {
     <nav className={styles.menu}>
       <ul>
         <li><Link to='/login' onClick={handleLogout}>Login</Link></li>
-        <li><Link to='/pessoa'>pessoa</Link></li>
+        <li><Link to='/pessoa'>Pessoa</Link></li>
+        <li><Link to='/endereco'>Endereço</Link></li>
         <li>{auth && <button onClick={handleLogout} className={styles.btnSair}>Sair</button>}</li>
       </ul>
     </nav>

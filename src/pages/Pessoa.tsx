@@ -41,7 +41,9 @@ const Pessoa = () => {
 
   return (
     <div>
-      <h1 className={styles.h1Pessoa}>Pessoa</h1>
+      <div className={styles.h1PessoaContainer}>
+        <h1 className={styles.h1Pessoa}>Pessoa</h1>
+      </div>
 
       <div className={styles.boxCadastro}>
       
@@ -65,7 +67,7 @@ const Pessoa = () => {
             }
             setSubmitting(false);
             await getListPessoas();
-            resetForm()
+            resetForm();
         }}
       >
         <Form className={styles.boxPessoa}>

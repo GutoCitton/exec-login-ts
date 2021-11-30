@@ -1,0 +1,24 @@
+.errorContainer {
+  min-height: 80.8vh;
+  display: flex;
+  justify-content: center;
+  background-image: url('../images/mariotriste.jpg');
+  background-size: 1950px 770px;
+  
+}
+
+.errorH1 {
+  background-color: rgb(0, 0, 0, 0.9);
+  padding: 20px;
+  font-size: 80px; 
+  color: #fff;
+  text-shadow:
+    0 0 3.5px #fff,
+    0 0 5px #fff,
+    0 0 10.5px #fff,
+    0 0 21px rgb(255, 0, 0),
+    0 0 41px rgb(255, 0, 0),
+    0 0 46px rgb(255, 0, 0),
+    0 0 51px rgb(255, 0, 0),
+    0 0 75.75px rgb(255, 0, 0);
+}

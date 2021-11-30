@@ -1,0 +1,47 @@
+.enderecoContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.enderecoBox {
+  display: flex;
+  flex-direction: column;
+}
+
+.enderecoBox div{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+}
+
+.enderecoBox div:first-child{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+
+}
+
+.enderecoBox div:first-child div{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 110px;
+}
+
+.enderecoBox button{
+  margin-left: 30px;
+}
+
+
+.h1Endereco {
+  text-align: center;
+  min-width: 200px;
+}
+
+.h1EnderecoContainer{
+  display: flex;
+  justify-content: center;
+}
